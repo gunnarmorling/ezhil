@@ -18,7 +18,7 @@
 						<div class="meta">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
 						<h4 class="summary">{{.Title}}</h4>
 						<div>
-							<span class="description">{{ .Summary | plainify | htmlUnescape }}</span>
+							<span class="description">{{ partial "strip-toc.html" .Summary | htmlUnescape }}</span>
 						</div>
 						<p>
 							<a href="{{ .RelPermalink }}">Read More...</a>
