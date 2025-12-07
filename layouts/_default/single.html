@@ -15,19 +15,19 @@
 				{{ .Content }}
 			</div>
 
-			<div class="post-tags">
-				{{ if ne .Type "page" }}
-					{{ if gt .Params.tags 0 }}
-						<nav class="nav tags">
-								<ul class="flat">
-									{{ range .Params.tags }}
-									<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-									{{ end }}
-								</ul>
-						</nav>
+			{{ if ne .Type "page" }}
+			{{ $related := .Site.RegularPages.Related . }}
+			{{ if $related }}
+			<div class="related-posts">
+				<h3>Read Next</h3>
+				<ul>
+					{{ range first 3 $related }}
+					<li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}</span></li>
 					{{ end }}
-				{{ end }}
+				</ul>
 			</div>
+			{{ end }}
+			{{ end }}
 		</div>
 
 		<div class="post-footer">
