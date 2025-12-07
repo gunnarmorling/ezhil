@@ -3,10 +3,18 @@
 {{ partial "header.html" . }}
 
 <body>
-	<div class="container wrapper tags">
+	<div class="container wrapper list">
 		{{ partial "head.html" . }}
 
-		<h1 class="page-title">All tags</h1>
+		<h1 class="page-title">Tag: {{ .Title }}</h1>
+
+		<div class="tag-posts">
+			<ul>
+			{{ range .Pages }}
+				<li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}</span></li>
+			{{ end }}
+			</ul>
+		</div>
 	</div>
 
 	{{ partial "footer.html" . }}

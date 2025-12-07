@@ -8,7 +8,16 @@
 		<div id = "main-content">
 			<div class="post-header">
 				<h1 class="title">{{ .Title }}</h1>
-				<div class="meta">Posted at {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+				<div class="post-meta-line">
+					<span class="meta">Posted at {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>
+					{{ if .Params.tags }}
+					<span class="post-tags-inline">
+						{{ range .Params.tags }}
+						<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+						{{ end }}
+					</span>
+					{{ end }}
+				</div>
 			</div>
 
 			<div class="post-content">
