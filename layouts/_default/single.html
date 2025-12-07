@@ -51,7 +51,7 @@
 		{{ if ne .Type "page" }}
 		{{ $pageURL := printf "morling.dev%s" .RelPermalink }}
 		<div class="post-discussions">
-			<p>Comment below or join the discussion on
+			<p>Comment below, or join the discussion on
 			<a href="{{ printf "https://hn.algolia.com/?query=%s" $pageURL | safeURL }}">Hacker News</a>,
 			<a href="https://lobste.rs/search?q=domain:morling.dev+title:%22{{ .Title }}%22&what=stories">Lobsters</a>, and
 			<a href="{{ printf "https://www.reddit.com/search/?q=url:%s" $pageURL | safeURL }}">Reddit</a>.
