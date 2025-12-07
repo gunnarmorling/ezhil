@@ -32,18 +32,49 @@
 	{{- template "_internal/twitter_cards.html" . -}}
 
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
- 
-	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/main.css" />
+
+	{{- with resources.Get "css/normalize.css" }}
+	{{- with . | resources.Minify }}
+	{{- with . | resources.Fingerprint }}
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ .RelPermalink }}" />
+	{{- end }}
+	{{- end }}
+	{{- end }}
+
+	{{- with resources.Get "css/main.css" }}
+	{{- with . | resources.Minify }}
+	{{- with . | resources.Fingerprint }}
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ .RelPermalink }}" />
+	{{- end }}
+	{{- end }}
+	{{- end }}
 
 	{{ range $css := .Site.Params.customCSS }}
-	<link rel="stylesheet" type="text/css" href="{{ $.Site.BaseURL }}{{ $css }}" />
+	{{- with resources.Get $css }}
+	{{- with . | resources.Minify }}
+	{{- with . | resources.Fingerprint }}
+	<link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}" />
+	{{- end }}
+	{{- end }}
+	{{- end }}
 	{{ end }}
 
 	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
-	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/dark.css" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
+	{{- with resources.Get "css/dark.css" }}
+	{{- with . | resources.Minify }}
+	{{- with . | resources.Fingerprint }}
+	<link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}" {{ if eq $.Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
+	{{- end }}
+	{{- end }}
+	{{- end }}
 	{{- if isset .Site.Params "customdarkcss" }}
-	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}{{ .Site.Params.customDarkCSS }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
+	{{- with resources.Get .Site.Params.customDarkCSS }}
+	{{- with . | resources.Minify }}
+	{{- with . | resources.Fingerprint }}
+	<link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}" {{ if eq $.Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
+	{{- end }}
+	{{- end }}
+	{{- end }}
 	{{- end }}
 	{{- end }}
 
@@ -52,7 +83,13 @@
 		const apiKey = "{{ .Site.Params.apiKey }}";
 	</script>
 
-	<script src="{{ $.Site.BaseURL }}/js/main.js"></script>
+	{{- with resources.Get "js/main.js" }}
+	{{- with . | resources.Minify }}
+	{{- with . | resources.Fingerprint }}
+	<script src="{{ .RelPermalink }}"></script>
+	{{- end }}
+	{{- end }}
+	{{- end }}
 	<script src="{{ $.Site.BaseURL }}/js/medium-zoom.min.js"></script>
 
 	{{- if isset .Site.Params "customjs" -}}
