@@ -494,3 +494,21 @@ ul {
     font-weight: 400;
     src: url('/fonts/raleway-v37-latin-regular.woff2') format('woff2');
 }
+
+/* jetbrains-mono-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
+/* jetbrains-mono-italic - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/fonts/JetBrainsMono-Italic.woff2') format('woff2');
+}
