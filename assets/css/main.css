@@ -1,9 +1,9 @@
 body {
-    font-family: "ubuntu", sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 400;
     color: #333;
     line-height: 1.6;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 a, a:hover {
@@ -414,60 +414,6 @@ ul {
 
 /* See https://gwfh.mranftl.com/fonts for self-hosting Google fonts */
 
-/* ubuntu-300 - latin */
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Ubuntu';
-    font-style: normal;
-    font-weight: 300;
-    src: url('/fonts/ubuntu-v21-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
-/* ubuntu-300italic - latin */
-@font-face {
-    font-display: swap;
-    font-family: 'Ubuntu';
-    font-style: italic;
-    font-weight: 300;
-    src: url('/fonts/ubuntu-v21-latin-300italic.woff2') format('woff2');
-}
-
-/* ubuntu-regular - latin */
-@font-face {
-    font-display: swap;
-    font-family: 'Ubuntu';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/fonts/ubuntu-v21-latin-regular.woff2') format('woff2');
-  }
-
-/* ubuntu-italic - latin */
-@font-face {
-    font-display: swap;
-    font-family: 'Ubuntu';
-    font-style: italic;
-    font-weight: 400;
-    src: url('/fonts/ubuntu-v21-latin-italic.woff2') format('woff2');
-}
-
-/* ubuntu-700 - latin */
-@font-face {
-    font-display: swap;
-    font-family: 'Ubuntu';
-    font-style: normal;
-    font-weight: 700;
-    src: url('/fonts/ubuntu-v21-latin-700.woff2') format('woff2');
-}
-
-/* ubuntu-700italic - latin */
-@font-face {
-    font-display: swap;
-    font-family: 'Ubuntu';
-    font-style: italic;
-    font-weight: 700;
-    src: url('/fonts/ubuntu-v21-latin-700italic.woff2') format('woff2');
-}
-
 /* raleway-200 - latin */
 @font-face {
     font-display: swap;
@@ -511,4 +457,76 @@ ul {
     font-style: italic;
     font-weight: 400;
     src: url('/fonts/JetBrainsMono-Italic.woff2') format('woff2');
+}
+
+/* lato-400 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/lato-latin-400-normal.woff2') format('woff2');
+}
+
+/* lato-400italic - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/fonts/lato-latin-400-italic.woff2') format('woff2');
+}
+
+/* lato-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/lato-latin-700-normal.woff2') format('woff2');
+}
+
+/* lato-700italic - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 700;
+    src: url('/fonts/lato-latin-700-italic.woff2') format('woff2');
+}
+
+/* lora-400 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/lora-latin-400-normal.woff2') format('woff2');
+}
+
+/* lora-400italic - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Lora';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/fonts/lora-latin-400-italic.woff2') format('woff2');
+}
+
+/* lora-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/lora-latin-700-normal.woff2') format('woff2');
+}
+
+/* lora-700italic - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Lora';
+    font-style: italic;
+    font-weight: 700;
+    src: url('/fonts/lora-latin-700-italic.woff2') format('woff2');
 }
